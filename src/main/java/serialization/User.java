@@ -2,7 +2,7 @@ package serialization;
 
 import java.io.*;
 
-public class User implements Serializable {
+public class User implements Serializable, Externalizable {
 
     private String name;
     private String surname;
@@ -48,5 +48,15 @@ public class User implements Serializable {
         sb.append("Name: ").append(this.name).append("\nSurname: ").append(this.surname);
         sb.append("\nAge: ").append(this.age);
         return sb.toString();
+    }
+
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeObject(this.name);
+        out.writeObject(this.age);
+    }
+
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        this.name = (String) in.readObject();
+        this.age = (Integer) in.readObject();
     }
 }
