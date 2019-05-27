@@ -19,11 +19,8 @@ public class SAXParserDemo {
         InputStream is = SAXParserDemo.class.getClassLoader().getResourceAsStream("worker.xml");
         DefaultHandlerExt handler = new DefaultHandlerExt();
         parser.parse(is, handler);
-        is = SAXParserDemo.class.getClassLoader().getResourceAsStream("worker.xml");
-        parser.parse(is, handler);
 
         List<Worker> workers = handler.getWorkers();
-
         for (Worker worker : workers) {
             System.out.println(worker);
         }
