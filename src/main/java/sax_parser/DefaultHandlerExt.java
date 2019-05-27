@@ -37,10 +37,10 @@ public class DefaultHandlerExt extends DefaultHandler {
         } else if (qName.equalsIgnoreCase("position")) {
             isPosition = true;
         } else if (qName.equalsIgnoreCase("additionalInfo")) {
-            String year = attributes.getValue("sinceYear");
+            int year = Integer.parseInt(attributes.getValue("sinceYear"));
             String company = attributes.getValue("company");
-            worker.setSinceYear(Integer.parseInt(year));
-            worker.setCompany(company);
+            worker.getAi().setSinceYear(year);
+            worker.getAi().setCompany(company);
         }
         this.data = new StringBuilder();
     }

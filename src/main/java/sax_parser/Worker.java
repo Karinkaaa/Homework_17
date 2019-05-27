@@ -4,10 +4,10 @@ public class Worker {
 
     private String login;
     private String position;
-    private String company;
-    private int sinceYear;
+    private AdditionalInfo ai;
 
     public Worker() {
+        ai = new AdditionalInfo();
     }
 
     public String getLogin() {
@@ -26,28 +26,19 @@ public class Worker {
         this.position = position;
     }
 
-    public String getCompany() {
-        return company;
+    public AdditionalInfo getAi() {
+        return ai;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    public int getSinceYear() {
-        return sinceYear;
-    }
-
-    public void setSinceYear(int sinceYear) {
-        this.sinceYear = sinceYear;
+    public void setAi(AdditionalInfo ai) {
+        this.ai = ai;
     }
 
     @Override
     public String toString() {
 
         StringBuffer sb = new StringBuffer("\nWORKER:\n");
-        sb.append("Login: ").append(this.login).append("\nPosition: ").append(this.position);
-        sb.append("\nCompany: ").append(this.company).append("\nSince year: ").append(this.sinceYear).append("\n");
+        sb.append("Login: ").append(this.login).append("\nPosition: ").append(this.position).append(ai);
         return sb.toString();
     }
 }
