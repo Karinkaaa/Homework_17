@@ -7,11 +7,7 @@ public class Worker {
     private String company;
     private int sinceYear;
 
-    public Worker(String login, String position, String company, int sinceYear) {
-        this.login = login;
-        this.position = position;
-        this.company = company;
-        this.sinceYear = sinceYear;
+    public Worker() {
     }
 
     public String getLogin() {
@@ -49,9 +45,9 @@ public class Worker {
     @Override
     public String toString() {
 
-       StringBuffer sb = new StringBuffer("WORKER:\n");
-       sb.append("Login: ").append(this.login).append("\nPosition: ").append(this.position);
-       sb.append("\nCompany: ").append(this.company).append("\nSince year: ").append(this.sinceYear);
-       return sb.toString();
+        StringBuffer sb = new StringBuffer("\nWORKER:\n");
+        sb.append("Login: ").append(this.login).append("\nPosition: ").append(this.position);
+        sb.append("\nCompany: ").append(this.company).append("\nSince year: ").append(this.sinceYear).append("\n");
+        return sb.toString();
     }
 }
